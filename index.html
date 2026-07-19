@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hollow Knight Bosses</title>
+<style>
+body {
+margin: 0;
+overflow: hidden;
+font-family: "Cinzel", serif;
+background: black;
+color: #d7b46a;
+}
+
+.page {
+position: absolute;
+inset: 0;
+width: 100vw;
+height: 100vh;
+display: none;
+}
+
+.page.active {
+display: block;
+}
+
+/* Cover Page */
+#cover {
+width: 100%;
+height: 100%;
+background-image: url('cover.jpg');
+background-size: cover;
+background-position: center;
+position: relative;
+}
+
+#cover-title {
+position: absolute;
+top: 30%;
+width: 100%;
+text-align: center;
+font-size: 4rem;
+color: #d7b46a;
+text-shadow: 0 0 20px black;
+}
+
+/* Arrow styling */
+.nav-arrow {
+position: absolute;
+top: 50%;
+width: 50px;
+cursor: pointer;
+z-index: 9999;
+filter: drop-shadow(0 0 12px #d7b46a) drop-shadow(0 0 4px #d7b46a);
+transition: filter 0.2s ease;
+transform: translateY(-50%);
+}
+
+.nav-arrow:hover {
+filter: drop-shadow(0 0 20px #ffd98a) drop-shadow(0 0 8px #ffd98a);
+}
+
+.next-arrow {
+right: 40px;
+}
+
+.back-arrow {
+left: 40px;
+transform: translateY(-50%) scaleX(-1);
+}
+
+/* Boss Pages */
+.boss-layout {
+display: flex;
+height: 100%;
+width: 100%;
+}
+
+.sidebar {
+width: 25%;
+background: rgba(60, 45, 20, 0.8);
+padding: 20px;
+box-sizing: border-box;
+border-right: 4px solid #d7b46a;
+font-size: 1.3rem;
+}
+
+/* ⭐ ONLY Pure Nail Hits moved lower */
+.sidebar p:nth-of-type(2) {
+margin-top: 40px;
+}
+
+.boss-area {
+width: 75%;
+position: relative;
+overflow: hidden;
+padding-top: 10px;
+}
+
+.boss-bg {
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+filter: blur(4px) brightness(0.6);
+}
+
+.boss-name {
+position: absolute;
+top: 10px;
+width: 100%;
+text-align: center;
+font-size: 3rem;
+color: #d7b46a;
+text-shadow: 0 0 10px black;
+}
+
+.boss-sprite {
+position: absolute;
+bottom: 140px;
+left: 50%;
+transform: translateX(-50%);
+max-height: 65%;
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 0: COVER -->
+<div class="page active" id="page-0">
+<div id="cover">
+<div id="cover-title">HOLLOW KNIGHT BOSSES</div>
+<img class="nav-arrow next-arrow" src="arrow.png" onclick="nextPage()">
+</div>
+</div>
+
+<!-- PAGE 1: GRUZ MOTHER -->
+<div class="page" id="page-1">
+<div class="boss-layout">
+<div class="sidebar">
+<h2>GRUZ MOTHER</h2>
+
+<p>
+<strong>HP</strong><br>
+Attuned: 80<br>
+Ascended: 100<br>
+Radiant: 100
+</p>
+
+<p>
+<strong>Pure Nail Hits</strong><br>
+Attuned: 4<br>
+Ascended: 5<br>
+Radiant: 5
+</p>
+</div>
+
+<div class="boss-area">
+<img class="boss-bg" src="gruz-bg.jpg">
+<div class="boss-name">GRUZ MOTHER</div>
+<img class="boss-sprite" src="gruz.png">
+</div>
+</div>
+
+<img class="nav-arrow back-arrow" src="arrow.png" onclick="prevPage()">
+<img class="nav-arrow next-arrow" src="arrow.png" onclick="nextPage()">
+</div>
+
+<!-- PAGE 2: VENGEFLY KING -->
+<div class="page" id="page-2">
+<div class="boss-layout">
+<div class="sidebar">
+<h2>VENGEFLY KING</h2>
+
+<p>
+<strong>HP</strong><br>
+Attuned: 90<br>
+Ascended: 120<br>
+Radiant: 120
+</p>
+
+<p>
+<strong>Pure Nail Hits</strong><br>
+Attuned: 5<br>
+Ascended: 6<br>
+Radiant: 6
+</p>
+</div>
+
+<div class="boss-area">
+<img class="boss-bg" src="vengefly-bg.jpg">
+<div class="boss-name">VENGEFLY KING</div>
+<img class="boss-sprite" src="vengefly.png">
+</div>
+</div>
+
+<img class="nav-arrow back-arrow" src="arrow.png" onclick="prevPage()">
+<img class="nav-arrow next-arrow" src="arrow.png" onclick="nextPage()">
+</div>
+
+<!-- PAGE 3: BROODING MAWLEK -->
+<div class="page" id="page-3">
+<div class="boss-layout">
+<div class="sidebar">
+<h2>BROODING MAWLEK</h2>
+
+<p>
+<strong>HP</strong><br>
+Attuned: 300<br>
+Ascended: 350<br>
+Radiant: 350
+</p>
+
+<p>
+<strong>Pure Nail Hits</strong><br>
+Attuned: 15<br>
+Ascended: 17<br>
+Radiant: 17
+</p>
+</div>
+
+<div class="boss-area">
+<img class="boss-bg" src="mawlek-bg.jpg">
+<div class="boss-name">BROODING MAWLEK</div>
+<img class="boss-sprite" src="mawlek.png">
+</div>
+</div>
+
+<img class="nav-arrow back-arrow" src="arrow.png" onclick="prevPage()">
+<img class="nav-arrow next-arrow" src="arrow.png" onclick="nextPage()">
+</div>
+
+<!-- PAGE 4: FALSE KNIGHT -->
+<div class="page" id="page-4">
+<div class="boss-layout">
+<div class="sidebar">
+<h2>FALSE KNIGHT</h2>
+
+<p>
+<strong>HP</strong><br>
+Attuned: 210<br>
+Ascended: 260<br>
+Radiant: 260
+</p>
+
+<p>
+<strong>Pure Nail Hits</strong><br>
+Attuned: 10<br>
+Ascended: 13<br>
+Radiant: 13
+</p>
+</div>
+
+<div class="boss-area">
+<img class="boss-bg" src="falseknight-bg.jpg">
+<div class="boss-name">FALSE KNIGHT</div>
+<img class="boss-sprite" src="falseknight.png">
+</div>
+</div>
+
+<img class="nav-arrow back-arrow" src="arrow.png" onclick="prevPage()">
+<img class="nav-arrow next-arrow" src="arrow.png" onclick="nextPage()">
+</div>
+
+<!-- PAGE 5: HORNET -->
+<div class="page" id="page-5">
+<div class="boss-layout">
+<div class="sidebar">
+<h2>HORNET</h2>
+
+<p>
+<strong>HP</strong><br>
+Attuned: 225<br>
+Ascended: 250<br>
+Radiant: 250
+</p>
+
+<p>
+<strong>Pure Nail Hits</strong><br>
+Attuned: 11<br>
+Ascended: 12<br>
+Radiant: 12
+</p>
+</div>
+
+<div class="boss-area">
+<img class="boss-bg" src="hornet-bg.jpg">
+<div class="boss-name">HORNET</div>
+<img class="boss-sprite" src="hornet.png">
+</div>
+</div>
+
+<img class="nav-arrow back-arrow" src="arrow.png" onclick="prevPage()">
+<img class="nav-arrow next-arrow" src="arrow.png" onclick="nextPage()">
+</div>
+
+<!-- PAGE 6: MASSIVE MOSS CHARGER -->
+<div class="page" id="page-6">
+<div class="boss-layout">
+<div class="sidebar">
+<h2>MASSIVE MOSS CHARGER</h2>
+
+<p>
+<strong>HP</strong><br>
+Attuned: 300<br>
+Ascended: 350<br>
+Radiant: 350
+</p>
+
+<p>
+<strong>Pure Nail Hits</strong><br>
+Attuned: 15<br>
+Ascended: 17<br>
+Radiant: 17
+</p>
+</div>
+
+<div class="boss-area">
+<img class="boss-bg" src="mosscharger-bg.jpg">
+<div class="boss-name">MASSIVE MOSS CHARGER</div>
+<img class="boss-sprite" src="mosscharger.png">
+</div>
+</div>
+
+<img class="nav-arrow back-arrow" src="arrow.png" onclick="prevPage()">
+</div>
+
+<script>
+let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+
+function showPage(index) {
+pages[currentPage].classList.remove('active');
+currentPage = index;
+pages[currentPage].classList.add('active');
+}
+
+function nextPage() {
+if (currentPage < pages.length - 1) {
+showPage(currentPage + 1);
+}
+}
+
+function prevPage() {
+if (currentPage > 0) {
+showPage(currentPage - 1);
+}
+}
+</script>
+
+</body>
+</html>
